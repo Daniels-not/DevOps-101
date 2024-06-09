@@ -27,3 +27,12 @@ jobs:
 
     - name: Run tests
       run: npm test
+
+    - name: Build and Deploy
+      run: |
+        # Configurar Surge.sh
+        npm install --global surge
+        surge token <SURGE_API_KEY> # Reemplazar <SURGE_API_KEY> con la API Key de Surge de cada estudiante
+
+        # Desplegar en Surge.sh
+        surge --project ./ --domain f98a9c2c9478fc0b73421196177a1f44.surge.sh # Reemplazar <SURGE_SUBDOMAIN> con un subdominio único para cada estudiante
